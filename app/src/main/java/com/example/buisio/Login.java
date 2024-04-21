@@ -1,40 +1,36 @@
 package com.example.buisio;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-
-
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
 public class Login extends AppCompatActivity {
-    TextView textEmail, textPassword;
+    TextInputEditText textEmail, textPassword;
     Button login,registerNow;
+    private CheckBox loginCB;
     ProgressBar progressBar;
-    FirebaseAuth mAuth;
-
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
     @Override
     public void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
@@ -47,6 +43,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.login_activity);
         mAuth = FirebaseAuth.getInstance();
         findViews();
+        rememberMe();
 
     registerNow.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -102,12 +99,26 @@ public class Login extends AppCompatActivity {
 
     }
 
+    private void rememberMe() {
+        loginCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked && currentUser != null && currentUser.getEmail() != null) {
+                    textEmail.setText(currentUser.getEmail());
+                } else {
+                    textEmail.setText(""); // Clear the email field if not checked
+                }
+            }
+        });
+    }
+
     private void findViews(){
         login = findViewById(R.id.buttonLogin);
         registerNow = findViewById(R.id.registerNow);
         textEmail = findViewById(R.id.LoginUsernameOrEmail);
         textPassword = findViewById(R.id.loginPassword);
         progressBar = findViewById(R.id.progressBar);
+        loginCB = findViewById(R.id.loginCheckBox);
     }
 
 

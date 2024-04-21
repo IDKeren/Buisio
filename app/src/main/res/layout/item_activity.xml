@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:id="@+id/viewLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/classTimeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#555"
+            android:text="Class Time" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="125dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/classNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:textStyle="bold"
+            android:text="Class Name" />
+
+        <TextView
+            android:id="@+id/classInstructorTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Instructor Name"
+            android:textColor="#777"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/addClassButtonAdapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/cancelClassButtonAdapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel Booking"
+            android:layout_marginTop="12dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/classBookingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/toolbar_color"
+            android:textStyle="bold"
+            android:text="Booked" />
+
+        <TextView
+            android:id="@+id/classNumOfMembersTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0/10 Booked"
+            android:textColor="#777"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

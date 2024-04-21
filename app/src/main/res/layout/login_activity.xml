@@ -26,13 +26,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/LoginUsernameOrEmail"
+                android:background="@android:color/transparent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textColorHint="@color/black"
-                android:hint="Username / Email Address"
+                android:hint="@string/UsernameEmailAddress"
                 android:inputType="textEmailAddress"
                 android:minHeight="48dp" />
 
@@ -42,11 +43,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <TextView
+    <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/loginPassword"
+                android:background="@android:color/transparent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="@string/Password"
                 android:textSize="20sp"
                 android:textColorHint="@color/black"
                 android:inputType="textPassword"
@@ -58,7 +60,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="RememberMe" />
+            android:text="@string/RememberMe" />
 
     </com.google.android.material.textfield.TextInputLayout>
         <ProgressBar
@@ -74,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_gravity="center"
-                android:text="LOG IN"
+                android:text="@string/LOGIN"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 />
@@ -87,7 +89,7 @@
                 android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:textStyle="bold"
-                android:text="Click to Register"
+                android:text="@string/ClicktoRegister"
                 android:textColor="#000000"
                 android:minHeight="48dp" />
 

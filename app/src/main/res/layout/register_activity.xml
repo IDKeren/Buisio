@@ -8,6 +8,7 @@
     android:gravity="center"
     android:padding="15dp"
     android:orientation="vertical"
+    android:background="@color/toolbar_color"
     >
 
     <TextView
@@ -15,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:text="@string/Register"
+        android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"
         android:gravity="center" />
@@ -24,12 +26,24 @@
         android:layout_height="wrap_content">
 
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/registerFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/FullName"
+            android:minHeight="48dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/registerUsernameOrEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username / Email Address"
+            android:hint="@string/UsernameEmailAddress"
             android:inputType="textEmailAddress"
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -42,7 +56,7 @@
             android:id="@+id/registerTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/Password"
             android:inputType="textPassword"
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -55,7 +69,7 @@
             android:id="@+id/registerPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Phone Number"
+            android:hint="@string/Phone_Number"
             android:inputType="phone"
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -73,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/REGISTER"
-        android:textColor="#020202"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginTop="16dp" />
 
@@ -82,10 +96,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:text="Click To Login"
+        android:text="@string/Click_To_Login"
         android:layout_gravity="center"
-        android:inputType="phone"
-        android:textColor="#050505"
+        android:textColor="@color/black"
         android:minHeight="48dp"
         android:layout_marginTop="16dp" />
 

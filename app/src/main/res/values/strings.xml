@@ -9,4 +9,18 @@
     <string name="title_schedule">Schedule</string>
     <string name="title_shop">Shop</string>
     <string name="title_feed">Feed</string>
+    <string name="title_logout">Logout</string>
+    <string name="title_more">More</string>
+    <string name="RememberMe">RememberMe</string>
+    <string name="ClicktoRegister">Click to Register</string>
+    <string name="LOGIN">Log In</string>
+    <string name="Password">Password</string>
+    <string name="UsernameEmailAddress">Email Address</string>
+    <string name="Phone_Number">Phone Number</string>
+    <string name="Click_To_Login">Click To Login</string>
+    <string name="FullName">Enter Full Name</string>
+    <string name="className">Class Name</string>
+    <string name="classTime">Class Time</string>
+    <string name="classInstructor">Class Instructor</string>
+    <string name="classDate">yyyy-mm-dd</string>
 </resources>

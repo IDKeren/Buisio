@@ -1,11 +1,8 @@
 package com.example.buisio;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -23,10 +20,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Register extends AppCompatActivity {
 
-    TextInputEditText editTextEmail,editTextPassword,editTextPhone;
+    TextInputEditText editTextEmail,editTextPassword,editTextPhone,editTextFullName;
     Button buttonReg,buttonLoginNow;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
+
 
     @Override
     public void onStart() {
@@ -48,23 +46,16 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
-                String email,password,phone;
+                String email,password,phone,fullName;
                 email = String.valueOf(editTextEmail.getText());
                 password = String.valueOf(editTextPassword.getText());
                 phone = String.valueOf(editTextPhone.getText());
+                fullName = String.valueOf(editTextPhone.getText());
 
-                if(TextUtils.isEmpty(email)){
-                    Toast.makeText(Register.this,"Enter eMail",Toast.LENGTH_SHORT).show();
-                    return;
-                }
 
-                if(TextUtils.isEmpty(password)){
-                    Toast.makeText(Register.this,"Enter Password",Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if(TextUtils.isEmpty(phone)){
-                    Toast.makeText(Register.this,"Enter Phone Number",Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(fullName)) {
+                    Toast.makeText(Register.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                     return;
                 }
 
@@ -99,14 +90,17 @@ public class Register extends AppCompatActivity {
         });
     }
 
-    private void findViews(){
-        buttonReg = findViewById(R.id.buttonReg);
-        buttonLoginNow = findViewById(R.id.loginNow);
+    private void findViews() {
         editTextEmail = findViewById(R.id.registerUsernameOrEmail);
         editTextPassword = findViewById(R.id.registerTextPassword);
         editTextPhone = findViewById(R.id.registerPhoneNumber);
+        editTextFullName = findViewById(R.id.registerFullName);
+        buttonReg = findViewById(R.id.buttonReg);
+        buttonLoginNow = findViewById(R.id.loginNow);
         progressBar = findViewById(R.id.progressBar);
     }
+
+
 
 
 

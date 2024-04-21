@@ -1,16 +1,18 @@
-package com.example.buisio.ui.schedule;
+package com.example.buisio.ui.more;
+
+
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ScheduleViewModel extends ViewModel {
+public class MoreViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
-
-    public ScheduleViewModel() {
+    public MoreViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is schedule fragment");
+        mText.setValue("This is more fragment");
+
     }
 
     public LiveData<String> getText() {

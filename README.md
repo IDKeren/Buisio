@@ -27,5 +27,5 @@ Follow these instructions to get Buisio up and running on your Android device:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/buisio.git
+   git clone https://github.com/IDKeren/Buisio.git
 
